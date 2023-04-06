@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus_repo
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./nexus-data:/sonatype-work
+    ports:
+      - 8081:8081
